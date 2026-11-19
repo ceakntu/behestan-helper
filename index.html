@@ -1,0 +1,1936 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>آماده‌ساز مدارک بهستان | انجمن علمی مهندسی کامپیوتر خواجه نصیر</title>
+
+  <style>
+    /* ==========================================================================
+       متغیرهای طراحی و پالت رنگی مهندسی (بدون وابستگی به CDN خارجی)
+       ========================================================================== */
+    :root {
+      --navy-950: #090f1d;
+      --navy-900: #0f172a;
+      --navy-800: #1e293b;
+      --navy-700: #334155;
+      --cyan-600: #0284c7;
+      --cyan-700: #0369a1;
+      --cyan-500: #0ea5e9;
+      --cyan-100: #e0f2fe;
+      --cyan-50: #f0f9ff;
+      --emerald-600: #059669;
+      --emerald-700: #047857;
+      --emerald-100: #d1fae5;
+      --emerald-50: #ecfdf5;
+      --amber-500: #f59e0b;
+      --amber-100: #fef3c7;
+      --amber-900: #78350f;
+      --rose-600: #e11d48;
+      --rose-100: #ffe4e6;
+      --surface-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 4px 10px -6px rgba(15, 23, 42, 0.05);
+      --font-fa: 'Vazirmatn', 'IRANSans', 'Sahel', 'Tahoma', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+      font-family: var(--font-fa);
+      background-color: var(--surface-bg);
+      color: var(--text-primary);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ==========================================================================
+       بنر راهنمای کاربران آیفون و مرورگر داخلی تلگرام
+       ========================================================================== */
+    .ios-banner {
+      background: linear-gradient(90deg, #fffbeb 0%, #fef3c7 100%);
+      border-bottom: 1px solid #fcd34d;
+      color: var(--amber-900);
+      padding: 10px 16px;
+      font-size: 0.82rem;
+    }
+
+    .ios-banner-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .ios-banner-text {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.55;
+    }
+
+    .ios-banner-badge {
+      background-color: #f59e0b;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+
+    .ios-banner-close {
+      background: rgba(120, 53, 15, 0.1);
+      border: none;
+      color: var(--amber-900);
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s ease;
+    }
+
+    .ios-banner-close:hover {
+      background: rgba(120, 53, 15, 0.18);
+    }
+
+    /* ==========================================================================
+       هدر اصلی برندینگ انجمن علمی مهندسی کامپیوتر خواجه نصیر
+       ========================================================================== */
+    .app-header {
+      background-color: var(--navy-900);
+      background-image:
+        radial-gradient(circle at 15% 20%, rgba(14, 165, 233, 0.22) 0%, transparent 48%),
+        radial-gradient(circle at 85% 80%, rgba(2, 132, 199, 0.25) 0%, transparent 50%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 26px 26px, 26px 26px;
+      color: #ffffff;
+      border-bottom: 1px solid var(--navy-800);
+      padding: 26px 16px 30px;
+    }
+
+    .header-container {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .header-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .org-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(14, 165, 233, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #7dd3fc;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 5px 13px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .org-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #38bdf8;
+      box-shadow: 0 0 8px #38bdf8;
+    }
+
+    .app-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    @media (min-width: 640px) {
+      .app-title {
+        font-size: 1.75rem;
+      }
+    }
+
+    .app-subtitle {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      max-width: 560px;
+    }
+
+    .app-subtitle strong {
+      color: #38bdf8;
+    }
+
+    .privacy-card {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      background: rgba(6, 78, 59, 0.55);
+      border: 1px solid rgba(52, 211, 153, 0.38);
+      border-radius: var(--radius-md);
+      padding: 12px 15px;
+      max-width: 340px;
+    }
+
+    .privacy-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(16, 185, 129, 0.2);
+      color: #6ee7b7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .privacy-text {
+      font-size: 0.78rem;
+      color: #ecfdf5;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       بخش اصلی و کارت آپلود
+       ========================================================================== */
+    .main-container {
+      flex: 1;
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px 16px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .panel {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 18px;
+    }
+
+    @media (min-width: 640px) {
+      .panel {
+        padding: 24px;
+      }
+    }
+
+    .specs-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .spec-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .spec-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f1f5f9;
+      color: var(--navy-800);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 5px 11px;
+      border-radius: 10px;
+    }
+
+    .spec-chip .dot-blue {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cyan-600);
+    }
+
+    .spec-chip .dot-green {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald-600);
+    }
+
+    .spec-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ناحیه انتخاب فایل با <label> استاندارد برای سازگاری کامل با iOS Safari */
+    .drop-label {
+      display: block;
+      border: 2px dashed #cbd5e1;
+      border-radius: var(--radius-lg);
+      background: #f8fafc;
+      padding: 28px 18px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .drop-label:hover,
+    .drop-label.drag-active {
+      border-color: var(--cyan-600);
+      background: var(--cyan-50);
+    }
+
+    .sr-only-input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .upload-icon-box {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 12px;
+      border-radius: 16px;
+      background: var(--cyan-100);
+      color: var(--cyan-600);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .drop-label:hover .upload-icon-box {
+      background: var(--cyan-600);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .upload-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 4px;
+    }
+
+    .upload-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .upload-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--cyan-600);
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 11px 22px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.28);
+      min-height: 44px;
+    }
+
+    /* نوار وضعیت در حال پردازش */
+    .processing-bar {
+      margin-top: 14px;
+      background: var(--cyan-50);
+      border: 1px solid #bae6fd;
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 0.83rem;
+      color: #0c4a6e;
+      font-weight: 700;
+    }
+
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2.5px solid #bae6fd;
+      border-top-color: var(--cyan-600);
+      border-radius: 50%;
+      animation: spin 0.75s linear infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ==========================================================================
+       بخش داشبورد فایل‌های آماده‌شده و دکمه ZIP گروهی
+       ========================================================================== */
+    .results-toolbar {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 16px 18px;
+    }
+
+    @media (min-width: 640px) {
+      .results-toolbar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .results-summary {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .count-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: var(--emerald-100);
+      color: var(--emerald-700);
+      font-weight: 800;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .results-heading {
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: var(--navy-900);
+    }
+
+    .results-sub {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .toolbar-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 9px 14px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.16s ease;
+      min-height: 42px;
+    }
+
+    .btn-emerald {
+      background: var(--emerald-600);
+      color: #ffffff;
+      box-shadow: 0 3px 10px rgba(5, 150, 105, 0.24);
+    }
+
+    .btn-emerald:hover {
+      background: var(--emerald-700);
+    }
+
+    .btn-cyan {
+      background: var(--cyan-600);
+      color: #ffffff;
+      box-shadow: 0 3px 10px rgba(2, 132, 199, 0.22);
+    }
+
+    .btn-cyan:hover {
+      background: var(--cyan-700);
+    }
+
+    .btn-ios-share {
+      background: var(--navy-800);
+      color: #ffffff;
+    }
+
+    .btn-ios-share:hover {
+      background: var(--navy-900);
+    }
+
+    .btn-ghost {
+      background: #f1f5f9;
+      color: var(--navy-700);
+      border-color: #e2e8f0;
+    }
+
+    .btn-ghost:hover {
+      background: #e2e8f0;
+    }
+
+    .btn-danger {
+      background: #f8fafc;
+      color: #64748b;
+      border-color: #e2e8f0;
+    }
+
+    .btn-danger:hover {
+      background: var(--rose-100);
+      color: var(--rose-600);
+      border-color: #fecdd3;
+    }
+
+    /* ==========================================================================
+       کارت‌های مدارک پردازش‌شده
+       ========================================================================== */
+    .cards-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .doc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      animation: fadeSlide 0.25s ease-out;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .doc-card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .thumb-wrapper {
+      position: relative;
+      width: 82px;
+      height: 82px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      background: #f1f5f9;
+      flex-shrink: 0;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    @media (min-width: 640px) {
+      .thumb-wrapper {
+        width: 94px;
+        height: 94px;
+      }
+    }
+
+    .thumb-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .thumb-zoom-tag {
+      position: absolute;
+      inset-inline: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.74);
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 4px;
+      text-align: center;
+    }
+
+    .doc-details {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .doc-header-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .doc-filename {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      background: #f1f5f9;
+      padding: 2px 8px;
+      border-radius: 6px;
+      direction: ltr;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .status-badge-ok {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--emerald-50);
+      border: 1px solid #a7f3d0;
+      color: var(--emerald-700);
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      direction: ltr;
+    }
+
+    .doc-meta-line {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .preset-select {
+      width: 100%;
+      max-width: 360px;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      background-color: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 8px 10px;
+      min-height: 40px;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .preset-select:focus {
+      border-color: var(--cyan-600);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.14);
+    }
+
+    .doc-actions-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      padding-top: 12px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    /* ==========================================================================
+       کارت نکات راهنمای بهستان
+       ========================================================================== */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    @media (min-width: 640px) {
+      .tips-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .tip-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .tip-box strong {
+      color: var(--navy-900);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    /* ==========================================================================
+       مودال پیش‌نمایش و بزرگ‌نمایی خوانایی مدرک
+       ========================================================================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(9, 15, 29, 0.9);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header {
+      background: var(--navy-900);
+      border-bottom: 1px solid var(--navy-800);
+      color: #ffffff;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .modal-title {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88rem;
+      font-weight: 700;
+      direction: ltr;
+    }
+
+    .modal-meta {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    .modal-body {
+      flex: 1;
+      overflow: auto;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-body img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+      transition: transform 0.2s ease;
+    }
+
+    .modal-body img.zoomed {
+      max-width: none;
+      max-height: none;
+      cursor: zoom-out;
+    }
+
+    .modal-footer {
+      background: var(--navy-900);
+      border-top: 1px solid var(--navy-800);
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    /* ==========================================================================
+       فوتر و اعلان‌های Toast
+       ========================================================================== */
+    .app-footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border-color);
+      padding: 14px 16px calc(14px + env(safe-area-inset-bottom));
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .toast-stack {
+      position: fixed;
+      bottom: calc(16px + env(safe-area-inset-bottom));
+      left: 16px;
+      right: 16px;
+      max-width: 380px;
+      z-index: 120;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      pointer-events: none;
+    }
+
+    .toast-item {
+      background: var(--navy-900);
+      color: #f8fafc;
+      border: 1px solid var(--navy-700);
+      border-radius: 12px;
+      padding: 11px 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      box-shadow: var(--shadow-md);
+      animation: fadeSlide 0.2s ease-out;
+    }
+
+    .toast-item.toast-success {
+      background: #064e3b;
+      border-color: #059669;
+      color: #ecfdf5;
+    }
+
+    .toast-item.toast-error {
+      background: #881337;
+      border-color: #e11d48;
+      color: #fff1f2;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======================= بنر راهنمای کاربران آیفون و مرورگر داخلی تلگرام ======================= -->
+  <aside id="iosTelegramBanner" class="ios-banner" role="region" aria-label="راهنمای کاربران آیفون">
+    <div class="ios-banner-inner">
+      <div class="ios-banner-text">
+        <span class="ios-banner-badge">راهنمای آیفون (iOS)</span>
+        <span>
+          اگر لینک را داخل مرورگر داخلی <strong>تلگرام</strong> باز کرده‌اید، برای دانلود بی‌دردسر مدارک از پایین صفحه روی آیکون قطب‌نما (<strong>Open in Safari</strong>) بزنید.
+        </span>
+      </div>
+      <button id="closeBannerBtn" type="button" class="ios-banner-close">متوجه شدم</button>
+    </div>
+  </aside>
+
+  <!-- ======================= هدر برندینگ انجمن علمی مهندسی کامپیوتر ======================= -->
+  <header class="app-header">
+    <div class="header-container">
+      <div>
+        <div class="org-pill">
+          <span class="org-dot"></span>
+          <span>انجمن علمی مهندسی کامپیوتر دانشگاه صنعتی خواجه نصیرالدین طوسی</span>
+        </div>
+        <h1 class="app-title">آماده‌ساز مدارک سامانه بهستان</h1>
+        <p class="app-subtitle">
+          تبدیل خودکار تصاویر مدارک ثبت‌نام به فرمت استاندارد <strong>JPEG</strong> با حجم دقیق بین
+          <strong>۱۰۰ تا ۲۵۰ کیلوبایت</strong> و حفظ حداکثری خوانایی نوشته‌ها.
+        </p>
+      </div>
+
+      <div class="privacy-card">
+        <div class="privacy-icon" aria-hidden="true">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+        </div>
+        <div class="privacy-text">
+          پردازش ۱۰۰٪ آفلاین درون مرورگر شما — هیچ عکسی به سرور ارسال نمی‌شود
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================= بخش اصلی برنامه ======================= -->
+  <main class="main-container">
+
+    <!-- کارت انتخاب و بارگذاری تصاویر -->
+    <section class="panel">
+      <div class="specs-bar">
+        <div class="spec-chips">
+          <span class="spec-chip"><span class="dot-blue"></span>فرمت خروجی: JPEG</span>
+          <span class="spec-chip"><span class="dot-green"></span>بازه مجاز بهستان: 100 KB ~ 250 KB</span>
+        </div>
+        <span class="spec-note">سازگار با iOS Safari، اندروید و Chrome دسکتاپ</span>
+      </div>
+
+      <!-- استفاده از <label> متصل به <input type="file"> برای باز شدن مطمئن گالری در iOS Safari -->
+      <label id="dropZone" for="fileInput" class="drop-label">
+        <input
+          id="fileInput"
+          type="file"
+          accept="image/*"
+          multiple
+          class="sr-only-input"
+        />
+
+        <div class="upload-icon-box" aria-hidden="true">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+
+        <div class="upload-title">انتخاب تصاویر مدارک از گالری یا فایل‌ها</div>
+        <div class="upload-desc">امکان انتخاب هم‌زمان چند عکس (PNG, JPG, WEBP, HEIC) یا کشیدن و رها کردن فایل‌ها</div>
+
+        <span class="upload-cta">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+          </svg>
+          <span>انتخاب عکس مدارک</span>
+        </span>
+      </label>
+
+      <!-- نوار وضعیت در حال پردازش -->
+      <div id="processingBar" class="processing-bar hidden" aria-live="polite">
+        <div style="display:flex;align-items:center;gap:10px;min-width:0;">
+          <div class="spinner"></div>
+          <span id="processingLabel" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">در حال بهینه‌سازی مدارک...</span>
+        </div>
+        <span id="processingStep" style="white-space:nowrap;"></span>
+      </div>
+    </section>
+
+    <!-- بخش داشبورد مدارک آماده‌شده -->
+    <section id="resultsWrapper" class="hidden">
+      <div class="results-toolbar">
+        <div class="results-summary">
+          <div id="filesCountBadge" class="count-badge">0</div>
+          <div>
+            <div class="results-heading">مدارک آماده‌شده برای آپلود در بهستان</div>
+            <div class="results-sub">نوع مدرک را انتخاب کنید تا نام فایل استاندارد شود؛ برای بررسی خوانایی روی تصویر بزنید.</div>
+          </div>
+        </div>
+
+        <div class="toolbar-actions">
+          <!-- دکمه دانلود یکجای ZIP (نمایش خودکار هنگام آماده بودن ۲ فایل یا بیشتر) -->
+          <button id="downloadAllZipBtn" type="button" class="btn btn-emerald hidden">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            <span>دانلود یکجای همه مدارک (ZIP)</span>
+          </button>
+
+          <button id="clearAllBtn" type="button" class="btn btn-danger">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+            </svg>
+            <span>پاک کردن لیست</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="cardsList" class="cards-grid"></div>
+    </section>
+
+    <!-- بخش یادآوری‌های ثبت‌نام بهستان -->
+    <section class="panel">
+      <h2 style="font-size:0.95rem;font-weight:800;color:var(--navy-900);">نکات مهم بارگذاری مدارک در سامانه بهستان (ورودی ۱۴۰۵)</h2>
+      <div class="tips-grid">
+        <div class="tip-box">
+          <strong>🖥️ ورود به بهستان فقط با کامپیوتر و Chrome</strong>
+          مدارک را می‌توانید همین‌جا با گوشی آماده کنید، اما برای بارگذاری در <span style="font-family:monospace;color:var(--cyan-700);">behestan.kntu.ac.ir</span> حتماً از کامپیوتر و مرورگر Chrome استفاده کنید.
+        </div>
+        <div class="tip-box">
+          <strong>🔍 پیگیری تایید مدارک (پردازش ۱۶۳۷۰)</strong>
+          پس از پایان ثبت‌نام غیرحضوری، <strong>پردازش ۱۶۳۷۰</strong> را مدام بررسی کنید تا وضعیتتان به <strong>«تایید نهایی»</strong> برسد.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================= فوتر ======================= -->
+  <footer class="app-footer">
+    <div class="footer-inner">
+      <span>ساخته‌شده در <strong>انجمن علمی مهندسی کامپیوتر دانشگاه صنعتی خواجه نصیرالدین طوسی</strong></span>
+      <span>نسخه مستقل و آفلاین • ویژه نودانشجویان ۱۴۰۵</span>
+    </div>
+  </footer>
+
+  <!-- ======================= مودال بزرگ‌نمایی و بررسی خوانایی ======================= -->
+  <div id="previewModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modalFileTitle">
+    <div class="modal-header">
+      <div style="min-width:0;">
+        <div id="modalFileTitle" class="modal-title"></div>
+        <div id="modalFileMeta" class="modal-meta"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <button id="modalZoomToggleBtn" type="button" class="btn btn-ghost" style="padding:6px 11px;min-height:36px;">بزرگ‌نمایی ۱۰۰٪</button>
+        <button id="closeModalBtn" type="button" class="btn btn-ghost" style="padding:6px 11px;min-height:36px;">بستن ✕</button>
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <img id="modalPreviewImg" src="" alt="پیش‌نمایش تمام‌صفحه مدرک" />
+    </div>
+
+    <div class="modal-footer">
+      <span style="font-size:0.78rem;color:#6ee7b7;font-weight:700;">✅ خوانایی نوشته‌ها و حجم فایل را بررسی کنید</span>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <button id="modalIosShareBtn" type="button" class="btn btn-ios-share hidden">ذخیره در آیفون / اشتراک‌گذاری</button>
+        <a id="modalDownloadLink" href="#" download="document.jpg" class="btn btn-cyan">دانلود فایل (.jpg)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================= کانتینر پیام‌های Toast ======================= -->
+  <div id="toastStack" class="toast-stack" aria-live="polite"></div>
+
+  <!-- ======================= منطق جاوااسکریپت مستقل (Zero External Dependencies) ======================= -->
+  <script>
+    (() => {
+      'use strict';
+
+      /* --------------------------------------------------------------------------
+         ۱. ثابت‌های مرزی استاندارد بهستان (100 KB تا 250 KB)
+         تضمین انطباق هم‌زمان در مقیاس باینری (1024) و دهدهی (1000)
+         -------------------------------------------------------------------------- */
+      const MIN_VALID_BYTES = 104 * 1024;   // 106,496 بایت (> 100 KB در هر دو مقیاس)
+      const UPSCALE_MIN_BYTES = 106 * 1024; // 108,544 بایت (حداقل هدف هنگام بزرگ‌نمایی)
+      const SWEET_LOW_BYTES = 165 * 1024;   // 168,960 بایت (کف بازه طلایی خوانایی)
+      const SWEET_HIGH_BYTES = 205 * 1024;  // 209,920 بایت (سقف بازه طلایی خوانایی)
+      const MAX_VALID_BYTES = 243 * 1024;   // 248,832 بایت (< 250 KB در هر دو مقیاس)
+      const IOS_SAFE_MAX_SIDE = 2200;       // سقف ایمن ابعاد برای جلوگیری از عبور از 16MP در iOS Safari
+      const UPSCALE_MAX_FACTOR = 2.2;       // حداکثر ضریب بزرگ‌نمایی برای اسکرین‌شات‌های کم‌حجم
+
+      /* --------------------------------------------------------------------------
+         ۲. فهرست استاندارد مدارک ثبت‌نام دانشگاه صنعتی خواجه نصیرالدین طوسی
+         -------------------------------------------------------------------------- */
+      const BEHESTAN_PRESETS = [
+        { key: 'default', label: 'انتخاب نوع مدرک (حفظ نام فعلی)', filename: '' },
+        { key: 'diploma', label: 'مدرک دیپلم / گواهی موقت (diploma.jpg)', filename: 'diploma.jpg' },
+        { key: 'diploma-transcript', label: 'کارنامه دیپلم (diploma-transcript.jpg)', filename: 'diploma-transcript.jpg' },
+        { key: 'form-602', label: 'کارنامه کلی / فرم ۶۰۲ (form-602.jpg)', filename: 'form-602.jpg' },
+        { key: 'national-card-front', label: 'کارت ملی - رو (national-card-front.jpg)', filename: 'national-card-front.jpg' },
+        { key: 'national-card-back', label: 'کارت ملی - پشت (national-card-back.jpg)', filename: 'national-card-back.jpg' },
+        { key: 'shenasnameh-p1', label: 'شناسنامه - صفحه اول (shenasnameh-p1.jpg)', filename: 'shenasnameh-p1.jpg' },
+        { key: 'shenasnameh-p2', label: 'شناسنامه - سایر صفحات (shenasnameh-p2.jpg)', filename: 'shenasnameh-p2.jpg' },
+        { key: 'health-form', label: 'فرم پایش سلامت (health-form.jpg)', filename: 'health-form.jpg' },
+        { key: 'form-1', label: 'فرم شماره ۱ - تعهد سوابق دانشجویی (form-1.jpg)', filename: 'form-1.jpg' },
+        { key: 'form-4', label: 'فرم شماره ۴ - تعهد آموزش رایگان منطقه ۱/ایثارگر (form-4.jpg)', filename: 'form-4.jpg' },
+        { key: 'form-5', label: 'فرم شماره ۵ - تعهد آموزش رایگان منطقه ۲ و ۳ (form-5.jpg)', filename: 'form-5.jpg' },
+        { key: 'form-6', label: 'فرم شماره ۶ - تعهد تحویل دیپلم (form-6.jpg)', filename: 'form-6.jpg' },
+        { key: 'form-8', label: 'فرم شماره ۸ - صحت سوابق تحصیلی (form-8.jpg)', filename: 'form-8.jpg' },
+        { key: 'other-doc', label: 'کارت ایثارگری / سایر مدارک (other-doc.jpg)', filename: 'other-doc.jpg' }
+      ];
+
+      /* وضعیت برنامه */
+      let docItems = [];
+      let activeModalDocId = null;
+
+      /* ارجاع‌های DOM */
+      const iosTelegramBanner = document.getElementById('iosTelegramBanner');
+      const closeBannerBtn = document.getElementById('closeBannerBtn');
+      const dropZone = document.getElementById('dropZone');
+      const fileInput = document.getElementById('fileInput');
+      const processingBar = document.getElementById('processingBar');
+      const processingLabel = document.getElementById('processingLabel');
+      const processingStep = document.getElementById('processingStep');
+      const resultsWrapper = document.getElementById('resultsWrapper');
+      const filesCountBadge = document.getElementById('filesCountBadge');
+      const downloadAllZipBtn = document.getElementById('downloadAllZipBtn');
+      const clearAllBtn = document.getElementById('clearAllBtn');
+      const cardsList = document.getElementById('cardsList');
+      const previewModal = document.getElementById('previewModal');
+      const modalFileTitle = document.getElementById('modalFileTitle');
+      const modalFileMeta = document.getElementById('modalFileMeta');
+      const modalPreviewImg = document.getElementById('modalPreviewImg');
+      const modalZoomToggleBtn = document.getElementById('modalZoomToggleBtn');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const modalIosShareBtn = document.getElementById('modalIosShareBtn');
+      const modalDownloadLink = document.getElementById('modalDownloadLink');
+      const toastStack = document.getElementById('toastStack');
+
+      /* --------------------------------------------------------------------------
+         ۳. توابع کمکی رابط کاربری و مدیریت حافظه Canvas
+         -------------------------------------------------------------------------- */
+      closeBannerBtn.addEventListener('click', () => {
+        iosTelegramBanner.classList.add('hidden');
+      });
+
+      function showToast(text, variant = 'info') {
+        const el = document.createElement('div');
+        el.className = 'toast-item' + (variant === 'success' ? ' toast-success' : variant === 'error' ? ' toast-error' : '');
+        el.textContent = text;
+        toastStack.appendChild(el);
+        setTimeout(() => {
+          el.style.opacity = '0';
+          el.style.transition = 'opacity 0.25s ease';
+          setTimeout(() => el.remove(), 260);
+        }, 3400);
+      }
+
+      function formatKB(bytes) {
+        return `${(bytes / 1024).toFixed(1)} KB`;
+      }
+
+      function sanitizeBaseFilename(rawName, index) {
+        const stem = rawName.replace(/\.[^/.]+$/, '').trim() || `document-${index + 1}`;
+        const safe = stem.replace(/[\\/:*?"<>|]+/g, '-').replace(/\s+/g, '-');
+        return `${safe}.jpg`;
+      }
+
+      /* آزادسازی صریح حافظه Canvas بلافاصله پس از تولید هر Blob برای جلوگیری از کرش iOS Safari */
+      function freeCanvasMemory(canvas) {
+        if (!canvas) return;
+        try {
+          const ctx = canvas.getContext('2d');
+          if (ctx) ctx.clearRect(0, 0, canvas.width, canvas.height);
+          canvas.width = 0;
+          canvas.height = 0;
+        } catch (err) {
+          /* نادیده گرفتن خطاهای احتمالی آزادسازی */
+        }
+      }
+
+      function canvasToJpegBlob(canvas, quality) {
+        return new Promise((resolve, reject) => {
+          try {
+            canvas.toBlob(
+              (blob) => {
+                if (blob) resolve(blob);
+                else reject(new Error('تولید فایل JPEG ناموفق بود'));
+              },
+              'image/jpeg',
+              quality
+            );
+          } catch (err) {
+            reject(err);
+          }
+        });
+      }
+
+      /* --------------------------------------------------------------------------
+         ۴. بارگذاری تصویر و کاهش ایمن ابعاد به سقف 2200px پیش از پردازش (محدودیت 16MP در iOS)
+         -------------------------------------------------------------------------- */
+      function loadBoundedImage(file) {
+        return new Promise((resolve, reject) => {
+          const rawUrl = URL.createObjectURL(file);
+          const img = new Image();
+
+          img.onload = async () => {
+            URL.revokeObjectURL(rawUrl);
+
+            const w = img.naturalWidth || img.width;
+            const h = img.naturalHeight || img.height;
+            if (!w || !h) {
+              reject(new Error('ابعاد تصویر معتبر نیست'));
+              return;
+            }
+
+            const maxSide = Math.max(w, h);
+            if (maxSide <= IOS_SAFE_MAX_SIDE) {
+              resolve({ img, width: w, height: h });
+              return;
+            }
+
+            // مقیاس‌دهی ایمن پیش از پردازش تا حداکثر 2200px
+            const ratio = IOS_SAFE_MAX_SIDE / maxSide;
+            const safeW = Math.round(w * ratio);
+            const safeH = Math.round(h * ratio);
+
+            const canvas = document.createElement('canvas');
+            canvas.width = safeW;
+            canvas.height = safeH;
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#FFFFFF';
+            ctx.fillRect(0, 0, safeW, safeH);
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
+            ctx.drawImage(img, 0, 0, safeW, safeH);
+
+            try {
+              const safeBlob = await canvasToJpegBlob(canvas, 0.96);
+              freeCanvasMemory(canvas);
+
+              const safeUrl = URL.createObjectURL(safeBlob);
+              const boundedImg = new Image();
+              boundedImg.onload = () => {
+                URL.revokeObjectURL(safeUrl);
+                resolve({ img: boundedImg, width: safeW, height: safeH });
+              };
+              boundedImg.onerror = () => {
+                URL.revokeObjectURL(safeUrl);
+                resolve({ img, width: w, height: h });
+              };
+              boundedImg.src = safeUrl;
+            } catch (e) {
+              freeCanvasMemory(canvas);
+              resolve({ img, width: w, height: h });
+            }
+          };
+
+          img.onerror = () => {
+            URL.revokeObjectURL(rawUrl);
+            reject(new Error('خواندن فایل تصویری امکان‌پذیر نبود'));
+          };
+
+          img.src = rawUrl;
+        });
+      }
+
+      /* رسم تصویر روی Canvas با اعمال مقیاس، چرخش ۹۰ درجه‌ای و پس‌زمینه سفید */
+      function renderTransformedCanvas(img, baseW, baseH, scale, rotationDeg) {
+        const scaledW = Math.max(150, Math.round(baseW * scale));
+        const scaledH = Math.max(150, Math.round(baseH * scale));
+        const isRotated90 = rotationDeg % 180 !== 0;
+
+        const canvas = document.createElement('canvas');
+        canvas.width = isRotated90 ? scaledH : scaledW;
+        canvas.height = isRotated90 ? scaledW : scaledH;
+
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+
+        ctx.save();
+        ctx.translate(canvas.width / 2, canvas.height / 2);
+        ctx.rotate((rotationDeg * Math.PI) / 180);
+        ctx.drawImage(img, -scaledW / 2, -scaledH / 2, scaledW, scaledH);
+        ctx.restore();
+
+        return canvas;
+      }
+
+      /* افزودن سگمنت استاندارد JPEG COM (0xFF 0xFE) تنها در صورتی که تصویر بسیار سفید
+         حتی پس از بزرگ‌نمایی 2.2x با کیفیت 0.98 باز هم زیر 104 KB باقی بماند */
+      async function padJpegCommentIfUnderMin(blob, targetMinBytes) {
+        if (blob.size >= targetMinBytes) return blob;
+
+        const buffer = await blob.arrayBuffer();
+        const src = new Uint8Array(buffer);
+        if (src.length < 2 || src[0] !== 0xff || src[1] !== 0xd8) return blob;
+
+        const deficit = targetMinBytes - src.length;
+        const segments = [];
+        let remaining = deficit;
+        const markerText = 'KNTU-CESA-Behestan-1405-';
+
+        while (remaining > 0) {
+          const payloadLen = Math.min(remaining, 65531);
+          const fieldLen = payloadLen + 2;
+          const seg = new Uint8Array(4 + payloadLen);
+          seg[0] = 0xff;
+          seg[1] = 0xfe;
+          seg[2] = (fieldLen >> 8) & 0xff;
+          seg[3] = fieldLen & 0xff;
+          for (let i = 0; i < payloadLen; i++) {
+            seg[4 + i] = markerText.charCodeAt(i % markerText.length);
+          }
+          segments.push(seg);
+          remaining -= (4 + payloadLen);
+        }
+
+        const addedLen = segments.reduce((sum, s) => sum + s.length, 0);
+        const merged = new Uint8Array(src.length + addedLen);
+        merged[0] = 0xff;
+        merged[1] = 0xd8;
+        let offset = 2;
+        for (const seg of segments) {
+          merged.set(seg, offset);
+          offset += seg.length;
+        }
+        merged.set(src.subarray(2), offset);
+
+        return new Blob([merged], { type: 'image/jpeg' });
+      }
+
+      /* --------------------------------------------------------------------------
+         ۵. موتور دوطرفه هوشمند تنظیم فرمت JPEG و حجم بین 100 KB و 250 KB
+         -------------------------------------------------------------------------- */
+      async function optimizeForBehestan(source, rotationDeg) {
+        const { img, width: baseW, height: baseH } = source;
+        const targetSweetBytes = 185 * 1024; // نقطه طلایی 185 KB (در میانه 165-205 KB)
+
+        // گام اول: ارزیابی اولیه با ابعاد پایه (scale = 1.0) و کیفیت 0.90
+        let scale = 1.0;
+        let canvas = renderTransformedCanvas(img, baseW, baseH, scale, rotationDeg);
+        let currentW = canvas.width;
+        let currentH = canvas.height;
+        let blob = await canvasToJpegBlob(canvas, 0.90);
+        freeCanvasMemory(canvas);
+
+        // اگر از همان ابتدا در بازه مجاز [104 KB, 243 KB] بود، مستقیماً بازمی‌گردانیم
+        if (blob.size >= MIN_VALID_BYTES && blob.size <= MAX_VALID_BYTES) {
+          return { blob, width: currentW, height: currentH };
+        }
+
+        // حالت الف: فایل بزرگ‌تر از 243 KB -> کاهش کیفیت (0.92 تا 0.55) و در صورت نیاز کاهش تدریجی ابعاد
+        if (blob.size > MAX_VALID_BYTES) {
+          for (let scaleAttempt = 0; scaleAttempt < 7; scaleAttempt++) {
+            canvas = renderTransformedCanvas(img, baseW, baseH, scale, rotationDeg);
+            currentW = canvas.width;
+            currentH = canvas.height;
+
+            // جستجوی دودویی کیفیت بین 0.55 تا 0.92 برای رسیدن به بازه طلایی 165-205 KB
+            let lowQ = 0.55;
+            let highQ = 0.92;
+            let bestCandidate = null;
+            let bestDiff = Infinity;
+
+            for (let iter = 0; iter < 7; iter++) {
+              const midQ = (lowQ + highQ) / 2;
+              const testBlob = await canvasToJpegBlob(canvas, midQ);
+
+              if (testBlob.size >= MIN_VALID_BYTES && testBlob.size <= MAX_VALID_BYTES) {
+                const diff = Math.abs(testBlob.size - targetSweetBytes);
+                if (diff < bestDiff) {
+                  bestDiff = diff;
+                  bestCandidate = testBlob;
+                }
+                if (testBlob.size >= SWEET_LOW_BYTES && testBlob.size <= SWEET_HIGH_BYTES) {
+                  bestCandidate = testBlob;
+                  break;
+                }
+              }
+
+              if (testBlob.size > targetSweetBytes) {
+                highQ = midQ;
+              } else {
+                lowQ = midQ;
+              }
+            }
+
+            if (bestCandidate) {
+              freeCanvasMemory(canvas);
+              return { blob: bestCandidate, width: currentW, height: currentH };
+            }
+
+            // بررسی کف کیفیت 0.55 در این مقیاس
+            const floorBlob = await canvasToJpegBlob(canvas, 0.55);
+            freeCanvasMemory(canvas);
+
+            if (floorBlob.size <= MAX_VALID_BYTES) {
+              blob = floorBlob;
+              break;
+            }
+
+            // هنوز بالای 243 KB است -> کاهش ابعاد (0.80x) با حفظ خوانایی متن
+            blob = floorBlob;
+            scale *= 0.80;
+          }
+        }
+
+        // حالت ب: فایل کوچک‌تر از 104 KB -> بزرگ‌نمایی تدریجی ابعاد (1.2x تا 2.2x) با کیفیت بالا (0.95-0.98)
+        if (blob.size < MIN_VALID_BYTES) {
+          const upscaleSteps = [1.25, 1.5, 1.85, UPSCALE_MAX_FACTOR];
+
+          for (const upFactor of upscaleSteps) {
+            scale = upFactor;
+            canvas = renderTransformedCanvas(img, baseW, baseH, scale, rotationDeg);
+            currentW = canvas.width;
+            currentH = canvas.height;
+
+            const highQBlob = await canvasToJpegBlob(canvas, 0.97);
+
+            if (highQBlob.size >= UPSCALE_MIN_BYTES && highQBlob.size <= MAX_VALID_BYTES) {
+              freeCanvasMemory(canvas);
+              return { blob: highQBlob, width: currentW, height: currentH };
+            }
+
+            // اگر با کیفیت 0.97 از 243 KB عبور کرد، کیفیت را بین 0.78 تا 0.97 تنظیم می‌کنیم
+            if (highQBlob.size > MAX_VALID_BYTES) {
+              let lq = 0.78;
+              let hq = 0.97;
+              let balanced = highQBlob;
+
+              for (let iter = 0; iter < 6; iter++) {
+                const mq = (lq + hq) / 2;
+                const probe = await canvasToJpegBlob(canvas, mq);
+                if (probe.size >= UPSCALE_MIN_BYTES && probe.size <= MAX_VALID_BYTES) {
+                  balanced = probe;
+                  break;
+                }
+                if (probe.size > MAX_VALID_BYTES) hq = mq;
+                else lq = mq;
+              }
+
+              freeCanvasMemory(canvas);
+              return { blob: balanced, width: currentW, height: currentH };
+            }
+
+            blob = highQBlob;
+            freeCanvasMemory(canvas);
+          }
+        }
+
+        // تضمین نهایی برای اسکن‌های تقریباً سفید که پس از بزرگ‌نمایی 2.2x هنوز زیر 104 KB هستند
+        if (blob.size < MIN_VALID_BYTES) {
+          blob = await padJpegCommentIfUnderMin(blob, 122 * 1024);
+        }
+
+        return { blob, width: currentW, height: currentH };
+      }
+
+      /* --------------------------------------------------------------------------
+         ۶. سازنده مستقل فایل ZIP در جاوااسکریپت خالص (CRC32 + Store Method)
+         -------------------------------------------------------------------------- */
+      const CRC32_TABLE = (() => {
+        const table = new Uint32Array(256);
+        for (let n = 0; n < 256; n++) {
+          let c = n;
+          for (let k = 0; k < 8; k++) {
+            c = (c & 1) ? (0xedb88320 ^ (c >>> 1)) : (c >>> 1);
+          }
+          table[n] = c;
+        }
+        return table;
+      })();
+
+      function computeCrc32(bytes) {
+        let crc = 0xffffffff;
+        for (let i = 0; i < bytes.length; i++) {
+          crc = CRC32_TABLE[(crc ^ bytes[i]) & 0xff] ^ (crc >>> 8);
+        }
+        return (crc ^ 0xffffffff) >>> 0;
+      }
+
+      async function createPureJsZipBlob(documents) {
+        const encoder = new TextEncoder();
+        const usedNames = new Set();
+        const localParts = [];
+        const centralParts = [];
+        let offset = 0;
+        let entryCount = 0;
+
+        for (const doc of documents) {
+          let filename = doc.outputName;
+          let suffix = 2;
+          while (usedNames.has(filename.toLowerCase())) {
+            filename = doc.outputName.replace(/\.jpg$/i, `-${suffix}.jpg`);
+            suffix++;
+          }
+          usedNames.add(filename.toLowerCase());
+
+          const nameBytes = encoder.encode(filename);
+          const dataBytes = new Uint8Array(await doc.blob.arrayBuffer());
+          const crc = computeCrc32(dataBytes);
+
+          // Local File Header (30 bytes + filename)
+          const localHeader = new Uint8Array(30 + nameBytes.length);
+          const lv = new DataView(localHeader.buffer);
+          lv.setUint32(0, 0x04034b50, true);      // Local file header signature
+          lv.setUint16(4, 20, true);              // Version needed to extract
+          lv.setUint16(6, 0x0800, true);          // General purpose bit flag (UTF-8)
+          lv.setUint16(8, 0, true);               // Compression method: 0 (STORE)
+          lv.setUint16(10, 0, true);              // File last modification time
+          lv.setUint16(12, 0x21, true);           // File last modification date
+          lv.setUint32(14, crc, true);            // CRC-32
+          lv.setUint32(18, dataBytes.length, true); // Compressed size
+          lv.setUint32(22, dataBytes.length, true); // Uncompressed size
+          lv.setUint16(26, nameBytes.length, true); // File name length
+          lv.setUint16(28, 0, true);              // Extra field length
+          localHeader.set(nameBytes, 30);
+
+          localParts.push(localHeader, dataBytes);
+
+          // Central Directory File Header (46 bytes + filename)
+          const centralHeader = new Uint8Array(46 + nameBytes.length);
+          const cv = new DataView(centralHeader.buffer);
+          cv.setUint32(0, 0x02014b50, true);      // Central directory file header signature
+          cv.setUint16(4, 20, true);              // Version made by
+          cv.setUint16(6, 20, true);              // Version needed to extract
+          cv.setUint16(8, 0x0800, true);          // General purpose bit flag (UTF-8)
+          cv.setUint16(10, 0, true);              // Compression method: 0 (STORE)
+          cv.setUint16(12, 0, true);              // File last modification time
+          cv.setUint16(14, 0x21, true);           // File last modification date
+          cv.setUint32(16, crc, true);            // CRC-32
+          cv.setUint32(20, dataBytes.length, true); // Compressed size
+          cv.setUint32(24, dataBytes.length, true); // Uncompressed size
+          cv.setUint16(28, nameBytes.length, true); // File name length
+          cv.setUint16(30, 0, true);              // Extra field length
+          cv.setUint16(32, 0, true);              // File comment length
+          cv.setUint16(34, 0, true);              // Disk number start
+          cv.setUint16(36, 0, true);              // Internal file attributes
+          cv.setUint32(38, 0, true);              // External file attributes
+          cv.setUint32(42, offset, true);         // Relative offset of local header
+          centralHeader.set(nameBytes, 46);
+
+          centralParts.push(centralHeader);
+          offset += localHeader.length + dataBytes.length;
+          entryCount++;
+        }
+
+        const centralDirBytes = centralParts.reduce((sum, p) => sum + p.length, 0);
+
+        // End of Central Directory Record (22 bytes)
+        const eocd = new Uint8Array(22);
+        const ev = new DataView(eocd.buffer);
+        ev.setUint32(0, 0x06054b50, true);        // End of central dir signature
+        ev.setUint16(4, 0, true);                 // Number of this disk
+        ev.setUint16(6, 0, true);                 // Disk where central directory starts
+        ev.setUint16(8, entryCount, true);        // Number of central directory records on this disk
+        ev.setUint16(10, entryCount, true);       // Total number of central directory records
+        ev.setUint32(12, centralDirBytes, true);  // Size of central directory
+        ev.setUint32(16, offset, true);           // Offset of start of central directory
+        ev.setUint16(20, 0, true);                // Comment length
+
+        return new Blob([...localParts, ...centralParts, eocd], { type: 'application/zip' });
+      }
+
+      /* --------------------------------------------------------------------------
+         ۷. پشتیبانی از Web Share API در iOS Safari / موبایل
+         -------------------------------------------------------------------------- */
+      function supportsFileShare(blob, filename) {
+        try {
+          if (!navigator.share || !navigator.canShare) return false;
+          const file = new File([blob], filename, { type: 'image/jpeg' });
+          return navigator.canShare({ files: [file] });
+        } catch (e) {
+          return false;
+        }
+      }
+
+      async function triggerWebShare(doc) {
+        try {
+          const file = new File([doc.blob], doc.outputName, { type: 'image/jpeg' });
+          await navigator.share({
+            files: [file],
+            title: doc.outputName
+          });
+        } catch (err) {
+          if (err && err.name !== 'AbortError') {
+            showToast('امکان اشتراک‌گذاری مستقیم نبود؛ از دکمه دانلود استفاده کنید.', 'error');
+          }
+        }
+      }
+
+      /* --------------------------------------------------------------------------
+         ۸. پردازش فایل‌های ورودی، چرخش، نام‌گذاری و رندر کارت‌ها
+         -------------------------------------------------------------------------- */
+      async function processUploadedFiles(fileList) {
+        const files = Array.from(fileList || []);
+        if (!files.length) return;
+
+        const imageCandidates = files.filter((f) => !f.type || f.type.startsWith('image/'));
+        if (!imageCandidates.length) {
+          showToast('لطفاً فقط فایل تصویری انتخاب کنید.', 'error');
+          return;
+        }
+
+        processingBar.classList.remove('hidden');
+        let successCount = 0;
+
+        for (let i = 0; i < imageCandidates.length; i++) {
+          const file = imageCandidates[i];
+          processingLabel.textContent = `در حال بهینه‌سازی «${file.name}»...`;
+          processingStep.textContent = `${i + 1} از ${imageCandidates.length}`;
+
+          try {
+            const boundedSource = await loadBoundedImage(file);
+            const optimized = await optimizeForBehestan(boundedSource, 0);
+            const defaultName = sanitizeBaseFilename(file.name, docItems.length);
+
+            docItems.push({
+              id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+              source: boundedSource,
+              rotation: 0,
+              originalSize: file.size,
+              presetKey: 'default',
+              defaultName,
+              outputName: defaultName,
+              blob: optimized.blob,
+              blobUrl: URL.createObjectURL(optimized.blob),
+              width: optimized.width,
+              height: optimized.height
+            });
+            successCount++;
+          } catch (err) {
+            console.error(err);
+            showToast(`فایل «${file.name}» قابل پردازش نبود.`, 'error');
+          }
+        }
+
+        processingBar.classList.add('hidden');
+        renderDocumentCards();
+
+        if (successCount > 0) {
+          showToast(`${successCount} مدرک با موفقیت به فرمت JPEG (۱۰۰ تا ۲۵۰ کیلوبایت) تبدیل شد.`, 'success');
+        }
+      }
+
+      async function rotateDocumentClockwise(id) {
+        const doc = docItems.find((d) => d.id === id);
+        if (!doc) return;
+
+        doc.rotation = (doc.rotation + 90) % 360;
+        const optimized = await optimizeForBehestan(doc.source, doc.rotation);
+
+        URL.revokeObjectURL(doc.blobUrl);
+        doc.blob = optimized.blob;
+        doc.blobUrl = URL.createObjectURL(optimized.blob);
+        doc.width = optimized.width;
+        doc.height = optimized.height;
+
+        renderDocumentCards();
+        showToast('تصویر ۹۰ درجه چرخانده شد و مجدداً بهینه‌سازی گردید.', 'info');
+      }
+
+      function removeDocument(id) {
+        const idx = docItems.findIndex((d) => d.id === id);
+        if (idx === -1) return;
+        URL.revokeObjectURL(docItems[idx].blobUrl);
+        docItems.splice(idx, 1);
+        renderDocumentCards();
+      }
+
+      function makeUniquePresetFilename(baseName, excludeId) {
+        const stem = baseName.replace(/\.jpg$/i, '');
+        const duplicates = docItems.filter(
+          (d) => d.id !== excludeId && (d.outputName === baseName || d.outputName.startsWith(`${stem}-`))
+        ).length;
+        return duplicates === 0 ? baseName : `${stem}-${duplicates + 1}.jpg`;
+      }
+
+      function renderDocumentCards() {
+        filesCountBadge.textContent = docItems.length;
+
+        if (docItems.length === 0) {
+          resultsWrapper.classList.add('hidden');
+          downloadAllZipBtn.classList.add('hidden');
+          cardsList.innerHTML = '';
+          return;
+        }
+
+        resultsWrapper.classList.remove('hidden');
+
+        // نمایش دکمه دانلود یکجای ZIP هنگام آماده بودن ۲ مدرک یا بیشتر
+        if (docItems.length >= 2) {
+          downloadAllZipBtn.classList.remove('hidden');
+        } else {
+          downloadAllZipBtn.classList.add('hidden');
+        }
+
+        cardsList.innerHTML = '';
+
+        docItems.forEach((doc) => {
+          const canShare = supportsFileShare(doc.blob, doc.outputName);
+
+          const card = document.createElement('article');
+          card.className = 'doc-card';
+
+          // بخش بالایی کارت (پیش‌نمایش بندانگشتی + جزئیات + انتخاب‌گر مدرک)
+          const topSection = document.createElement('div');
+          topSection.className = 'doc-card-top';
+
+          const thumbBtn = document.createElement('button');
+          thumbBtn.type = 'button';
+          thumbBtn.className = 'thumb-wrapper';
+          thumbBtn.title = 'بزرگ‌نمایی برای بررسی خوانایی';
+          thumbBtn.innerHTML = `
+            <img src="${doc.blobUrl}" alt="${doc.outputName}" />
+            <span class="thumb-zoom-tag">بزرگ‌نمایی</span>
+          `;
+          thumbBtn.addEventListener('click', () => openLegibilityModal(doc.id));
+
+          const details = document.createElement('div');
+          details.className = 'doc-details';
+
+          const headerRow = document.createElement('div');
+          headerRow.className = 'doc-header-row';
+          headerRow.innerHTML = `
+            <span class="doc-filename" title="${doc.outputName}">${doc.outputName}</span>
+            <span class="status-badge-ok">JPEG • ${formatKB(doc.blob.size)} ✓</span>
+          `;
+
+          const metaLine = document.createElement('div');
+          metaLine.className = 'doc-meta-line';
+          metaLine.innerHTML = `
+            <span>حجم قبلی: <strong>${formatKB(doc.originalSize)}</strong></span>
+            <span>|</span>
+            <span>ابعاد نهایی: <strong>${doc.width}×${doc.height} px</strong></span>
+          `;
+
+          const selectEl = document.createElement('select');
+          selectEl.className = 'preset-select';
+          selectEl.setAttribute('aria-label', 'انتخاب نوع مدرک بهستان');
+
+          BEHESTAN_PRESETS.forEach((preset) => {
+            const opt = document.createElement('option');
+            opt.value = preset.key;
+            opt.textContent = preset.label;
+            if (doc.presetKey === preset.key) opt.selected = true;
+            selectEl.appendChild(opt);
+          });
+
+          selectEl.addEventListener('change', (e) => {
+            const chosen = BEHESTAN_PRESETS.find((p) => p.key === e.target.value);
+            doc.presetKey = chosen ? chosen.key : 'default';
+            doc.outputName = (chosen && chosen.filename)
+              ? makeUniquePresetFilename(chosen.filename, doc.id)
+              : doc.defaultName;
+            renderDocumentCards();
+          });
+
+          details.appendChild(headerRow);
+          details.appendChild(metaLine);
+          details.appendChild(selectEl);
+
+          topSection.appendChild(thumbBtn);
+          topSection.appendChild(details);
+
+          // نوار دکمه‌های عملیاتی کارت
+          const actionsRow = document.createElement('div');
+          actionsRow.className = 'doc-actions-row';
+
+          // دکمه چرخش ۹۰ درجه ساعت‌گرد
+          const rotateBtn = document.createElement('button');
+          rotateBtn.type = 'button';
+          rotateBtn.className = 'btn btn-ghost';
+          rotateBtn.innerHTML = `
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-3-6.7L21 8m0-5v5h-5" />
+            </svg>
+            <span>چرخش ۹۰°</span>
+          `;
+          rotateBtn.addEventListener('click', () => rotateDocumentClockwise(doc.id));
+          actionsRow.appendChild(rotateBtn);
+
+          // دکمه بزرگ‌نمایی خوانایی
+          const zoomBtn = document.createElement('button');
+          zoomBtn.type = 'button';
+          zoomBtn.className = 'btn btn-ghost';
+          zoomBtn.innerHTML = `
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16zm0-11v6m-3-3h6" />
+            </svg>
+            <span>بررسی خوانایی</span>
+          `;
+          zoomBtn.addEventListener('click', () => openLegibilityModal(doc.id));
+          actionsRow.appendChild(zoomBtn);
+
+          // دکمه ذخیره مستقیم در آیفون / اشتراک‌گذاری با Web Share API
+          if (canShare) {
+            const shareBtn = document.createElement('button');
+            shareBtn.type = 'button';
+            shareBtn.className = 'btn btn-ios-share';
+            shareBtn.innerHTML = `
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13" />
+              </svg>
+              <span>ذخیره در آیفون / اشتراک‌گذاری</span>
+            `;
+            shareBtn.addEventListener('click', () => triggerWebShare(doc));
+            actionsRow.appendChild(shareBtn);
+          }
+
+          // لینک دانلود استاندارد <a download="filename.jpg">
+          const downloadAnchor = document.createElement('a');
+          downloadAnchor.href = doc.blobUrl;
+          downloadAnchor.download = doc.outputName;
+          downloadAnchor.rel = 'noopener';
+          downloadAnchor.className = 'btn btn-cyan';
+          downloadAnchor.innerHTML = `
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            <span>دانلود فایل</span>
+          `;
+          actionsRow.appendChild(downloadAnchor);
+
+          // دکمه حذف کارت
+          const removeBtn = document.createElement('button');
+          removeBtn.type = 'button';
+          removeBtn.className = 'btn btn-danger';
+          removeBtn.title = 'حذف مدرک';
+          removeBtn.setAttribute('aria-label', 'حذف مدرک');
+          removeBtn.innerHTML = `
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          `;
+          removeBtn.addEventListener('click', () => removeDocument(doc.id));
+          actionsRow.appendChild(removeBtn);
+
+          card.appendChild(topSection);
+          card.appendChild(actionsRow);
+          cardsList.appendChild(card);
+        });
+      }
+
+      /* --------------------------------------------------------------------------
+         ۹. کنترل‌های مودال بزرگ‌نمایی خوانایی
+         -------------------------------------------------------------------------- */
+      function openLegibilityModal(id) {
+        const doc = docItems.find((d) => d.id === id);
+        if (!doc) return;
+
+        activeModalDocId = id;
+        modalFileTitle.textContent = doc.outputName;
+        modalFileMeta.textContent = `JPEG • ${formatKB(doc.blob.size)} • ${doc.width}×${doc.height} px`;
+        modalPreviewImg.src = doc.blobUrl;
+        modalPreviewImg.classList.remove('zoomed');
+        modalZoomToggleBtn.textContent = 'بزرگ‌نمایی ۱۰۰٪';
+
+        modalDownloadLink.href = doc.blobUrl;
+        modalDownloadLink.download = doc.outputName;
+
+        if (supportsFileShare(doc.blob, doc.outputName)) {
+          modalIosShareBtn.classList.remove('hidden');
+        } else {
+          modalIosShareBtn.classList.add('hidden');
+        }
+
+        previewModal.classList.remove('hidden');
+      }
+
+      function closeLegibilityModal() {
+        previewModal.classList.add('hidden');
+        activeModalDocId = null;
+      }
+
+      modalZoomToggleBtn.addEventListener('click', () => {
+        const isZoomed = modalPreviewImg.classList.toggle('zoomed');
+        modalZoomToggleBtn.textContent = isZoomed ? 'نمایش متناسب با صفحه' : 'بزرگ‌نمایی ۱۰۰٪';
+      });
+
+      modalPreviewImg.addEventListener('click', () => {
+        const isZoomed = modalPreviewImg.classList.toggle('zoomed');
+        modalZoomToggleBtn.textContent = isZoomed ? 'نمایش متناسب با صفحه' : 'بزرگ‌نمایی ۱۰۰٪';
+      });
+
+      closeModalBtn.addEventListener('click', closeLegibilityModal);
+      previewModal.addEventListener('click', (e) => {
+        if (e.target === previewModal) closeLegibilityModal();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !previewModal.classList.contains('hidden')) {
+          closeLegibilityModal();
+        }
+      });
+
+      modalIosShareBtn.addEventListener('click', () => {
+        const doc = docItems.find((d) => d.id === activeModalDocId);
+        if (doc) triggerWebShare(doc);
+      });
+
+      /* --------------------------------------------------------------------------
+         ۱۰. رویدادهای انتخاب فایل، کشیدن و رها کردن و دانلود یکجای ZIP
+         -------------------------------------------------------------------------- */
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files.length > 0) {
+          processUploadedFiles(e.target.files);
+          fileInput.value = '';
+        }
+      });
+
+      ['dragenter', 'dragover'].forEach((evtName) => {
+        dropZone.addEventListener(evtName, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropZone.classList.add('drag-active');
+        });
+      });
+
+      ['dragleave', 'drop'].forEach((evtName) => {
+        dropZone.addEventListener(evtName, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropZone.classList.remove('drag-active');
+        });
+      });
+
+      dropZone.addEventListener('drop', (e) => {
+        if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+          processUploadedFiles(e.dataTransfer.files);
+        }
+      });
+
+      downloadAllZipBtn.addEventListener('click', async () => {
+        if (docItems.length < 2) return;
+        try {
+          const zipBlob = await createPureJsZipBlob(docItems);
+          const zipUrl = URL.createObjectURL(zipBlob);
+          const link = document.createElement('a');
+          link.href = zipUrl;
+          link.download = 'KNTU-Behestan-Madarek-1405.zip';
+          link.rel = 'noopener';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          showToast('فایل فشرده تمام مدارک آماده و دانلود شد.', 'success');
+        } catch (err) {
+          console.error(err);
+          showToast('خطا در ساخت آرشیو ZIP؛ فایل‌ها را به‌صورت تکی دانلود کنید.', 'error');
+        }
+      });
+
+      clearAllBtn.addEventListener('click', () => {
+        docItems.forEach((d) => URL.revokeObjectURL(d.blobUrl));
+        docItems = [];
+        renderDocumentCards();
+        showToast('لیست مدارک پاک شد.', 'info');
+      });
+    })();
+  </script>
+</body>
+</html>
